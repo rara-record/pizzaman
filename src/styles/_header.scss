@@ -75,6 +75,15 @@
   }
 }
 
+.header__shrink {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 99999;
+  box-shadow: 5px 5px 15px -5px #fde4e4;
+}
+
 @media only screen and (max-width: 992px) {
   .header {
     .logo {
@@ -147,9 +156,10 @@
       .mobile__menu {
         display: block;
       }
-      .show__menu {
-        display: block;
-      }
+    }
+
+    .show__menu {
+      display: block;
     }
   }
 }
