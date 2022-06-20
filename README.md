@@ -4,39 +4,20 @@
 
 ---
 
-##### Here's features included in this project
+##### 기능 설명
 
-- Add to cart functionality
-- Shopping cart functionality
-- Product Filtering functionality
-- Product page
-- Cart and checkout page
-- Contact page
-- Login and Register page
-- Awesome modern minimalist UI
+- 장바구니 기능
+- 쇼핑 카트 기능
+- 제품 필터링 기능
+- 제품별 페이지
+- Contact 페이지
+- 로그인 및 등록 페이지
 
-### Technologies Used:
+### 기술:
 
 ---
 
 1. React.js
 2. Redux Toolkit
 3. ReactStrap
-4. CSS
-
-### How to start?
-
----
-
-##### To start the project along with me just download the start-up file and run available script
-
-```javascript
-// first install all necessary dependencies
-
-npm i
-
-// next run
-
-npm start
-
-```
+4. SCSS
