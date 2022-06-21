@@ -4,12 +4,14 @@ import products from '../assets/fake-data/products'
 import Helmet from '../components/Helmet'
 import Category from '../components/UI/Category'
 import ProductCard from '../components/UI/ProductCard'
+import TestimonialSlider from '../components/UI/Slider/TestimonialSlider'
 
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
 
 import heroImg from '../assets/images/hero.png'
 import whyImg from '../assets/images/location.png'
+import networkImg from '../assets/images/network.png'
 
 import featureImg01 from '../assets/images/service-01.png'
 import featureImg02 from '../assets/images/service-02.png'
@@ -294,10 +296,10 @@ const Home = () => {
         </Container>
       </section>
 
-      <section className="hotPizza pt-0">
+      <section className="hot__pizza pt-0">
         <Container>
           <Row>
-            <Col lg="12" className="text-center mb-5 ">
+            <Col lg="12" className="text-center">
               <h2>Hot Pizza</h2>
             </Col>
 
@@ -306,6 +308,32 @@ const Home = () => {
                 <ProductCard item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial">
+                <div className="testimonial__subtitle mb-4">Testimonial</div>
+                <h2 className="testimonial__title mb-4">
+                  What our <span>customers</span> are saying
+                </h2>
+                <p className="testimonial__desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Distinctio quasi qui minus quos sit perspiciatis inventore
+                  quis provident placeat fugiat!
+                </p>
+
+                <TestimonialSlider />
+              </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <img src={networkImg} alt="testimonial-img" className="w-100" />
+            </Col>
           </Row>
         </Container>
       </section>
