@@ -271,6 +271,10 @@ ol {
     border-radius: 5px;
     color: #df2020 !important; }
 
+@media only screen and (max-width: 576px) {
+  .product .food__category {
+    flex-direction: column; } }
+
 .hero__content {
   padding-top: 70px; }
   .hero__content p {
@@ -372,7 +376,7 @@ ol {
   .product .wrapper {
     flex-direction: column; } }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .product__content h5 a {
     font-size: 1.4rem; }
   .product .addTOCart__btn {
