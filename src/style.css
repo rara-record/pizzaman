@@ -240,4 +240,45 @@ ol {
     font-size: 0.8rem;
     color: #df2020; }
 
+.hero__content {
+  padding-top: 70px; }
+  .hero__content p {
+    font-size: 1rem;
+    color: #777;
+    line-height: 30px; }
+  .hero__content .hero__btns button {
+    padding: 7px 20px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer; }
+  .hero__content .hero__btns .order__btn {
+    background: #df2020;
+    color: #fff;
+    transition: 0.3s; }
+  .hero__content .hero__btns .order__btn:hover {
+    background: #212245; }
+  .hero__content .hero__btns .all__foods-btn {
+    background: transparent;
+    border: 1px solid #df2020 !important; }
+  .hero__content .hero__btns .all__foods-btn a {
+    color: #df2020; }
+  .hero__content .hero__service p {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #212245; }
+  .hero__content .hero__service .shipping__icon i {
+    padding: 5px;
+    font-weight: 500 !important;
+    color: #fff;
+    background: #df2020;
+    border-radius: 50%; }
+
+.hero__title {
+  font-size: 2.5rem;
+  line-height: 55px; }
+  .hero__title span {
+    color: #df2020; }
+
 /*# sourceMappingURL=style.css.map */
