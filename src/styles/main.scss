@@ -1,7 +1,11 @@
 @charset 'utf-8';
 
 // base
-@import './reset';
+@import './common/reset';
 
 // 공통
-@import './header';
+@import './common/header';
+@import './common/footer';
+
+// home
+@import './home/hero-section.scss';
