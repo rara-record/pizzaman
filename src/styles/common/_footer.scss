@@ -37,6 +37,12 @@
     }
   }
 
+  .newsletter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
   .newsletter {
     display: flex;
     justify-content: space-between;
