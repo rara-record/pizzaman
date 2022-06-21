@@ -20,7 +20,7 @@
       margin-bottom: 30px;
 
       a {
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: #212245;
       }
     }
@@ -31,18 +31,14 @@
     font-size: 1.2rem;
     color: #df2020;
   }
-
-  .addTOCart__btn {
-    padding: 7px 25px;
-    font-size: 0.9rem;
-    color: #fff;
-    background: #df2020;
-    border-radius: 5px;
-    border: none;
-  }
 }
 
 @media only screen and (max-width: 992px) {
+  .addTOCart__btn {
+    padding: 5px 15px;
+    font-size: 0.7rem;
+  }
+
   .product {
     &__item {
       padding: 20px;
@@ -55,15 +51,6 @@
         }
       }
     }
-
-    .addTOCart__btn {
-      padding: 5px 15px;
-      font-size: 0.7rem;
-    }
-
-    .wrapper {
-      flex-direction: column;
-    }
   }
 }
 
@@ -72,13 +59,13 @@
     &__content {
       h5 {
         a {
-          font-size: 1.4rem;
+          font-size: 0.9rem;
         }
       }
     }
 
     .addTOCart__btn {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   }
 }
