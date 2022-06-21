@@ -1,0 +1,19 @@
+.feature {
+  text-align: center;
+
+  &__subtitle {
+    color: #df2020;
+  }
+
+  &__title span {
+    color: #df2020;
+  }
+
+  &__text {
+    color: #777;
+  }
+
+  &__item p {
+    color: #777;
+  }
+}

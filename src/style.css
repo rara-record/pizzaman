@@ -240,6 +240,17 @@ ol {
     font-size: 0.8rem;
     color: #df2020; }
 
+.feature {
+  text-align: center; }
+  .feature__subtitle {
+    color: #df2020; }
+  .feature__title span {
+    color: #df2020; }
+  .feature__text {
+    color: #777; }
+  .feature__item p {
+    color: #777; }
+
 .hero__content {
   padding-top: 70px; }
   .hero__content p {
@@ -280,5 +291,23 @@ ol {
   line-height: 55px; }
   .hero__title span {
     color: #df2020; }
+
+.category__item {
+  background: #fde4e4;
+  padding: 30px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s; }
+  .category__item:hover {
+    transform: translateY(-15px); }
+
+@media only screen and (max-width: 768px) {
+  .category__item {
+    padding: 20px 15px; }
+    .category__item img {
+      width: 40px;
+      height: 40px; }
+    .category__item h6 {
+      font-size: 0.8rem; } }
 
 /*# sourceMappingURL=style.css.map */
