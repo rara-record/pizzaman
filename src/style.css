@@ -271,6 +271,23 @@ ol {
     border-radius: 5px;
     color: #df2020 !important; }
 
+.why__choose-us .tasty__treat-title span {
+  color: #df2020; }
+
+.why__choose-us .tasty__treat-desc {
+  color: #777;
+  line-height: 28px; }
+
+.why__choose-us .choose__us-title {
+  font-weight: 600;
+  margin-bottom: 10px; }
+  .why__choose-us .choose__us-title i {
+    font-weight: 500 !important;
+    color: #df2020; }
+
+.why__choose-us .choose__us-desc {
+  color: #777; }
+
 @media only screen and (max-width: 576px) {
   .product .food__category {
     flex-direction: column; } }

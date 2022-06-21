@@ -47,6 +47,31 @@
   }
 }
 
+.why__choose-us {
+  .tasty__treat-title span {
+    color: #df2020;
+  }
+
+  .tasty__treat-desc {
+    color: #777;
+    line-height: 28px;
+  }
+
+  .choose__us-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    i {
+      font-weight: 500 !important;
+      color: #df2020;
+    }
+  }
+
+  .choose__us-desc {
+    color: #777;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .product {
     .food__category {
