@@ -503,7 +503,7 @@ ol {
       border-radius: 50%;
       cursor: pointer; }
   .cart__item-list {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 150px);
     overflow-y: scroll; }
   .cart__bottom {
     position: absolute;
