@@ -71,12 +71,13 @@ ol {
     text-align: center;
     cursor: pointer; }
     .header .logo h1 {
-      margin-top: -20px;
+      margin-top: -50px;
       margin-bottom: 0;
       font-size: 1rem;
       color: #212245; }
     .header .logo img {
       width: calc(100% - 60%);
+      margin-top: -50px;
       object-fit: contain; }
   .header .navigation .menu a {
     font-size: 1rem;
@@ -123,8 +124,7 @@ ol {
 
 @media only screen and (max-width: 992px) {
   .header .logo h1 {
-    font-size: 0.8rem;
-    margin-top: -15px; }
+    font-size: 0.8rem; }
   .header .logo img {
     width: calc(100% - 70%); }
   .header .navigation {
@@ -181,9 +181,9 @@ ol {
     height: 80px;
     line-height: 80px; }
     .header .logo h1 {
-      margin-top: -55px; }
+      margin-top: -44px; }
     .header .logo img {
-      margin-top: -70px !important; } }
+      margin-top: -50px !important; } }
 
 .footer {
   padding: 50px 0;
