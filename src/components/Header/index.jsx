@@ -30,6 +30,8 @@ const Header = () => {
   const menuRef = useRef(null)
   const headerRef = useRef(null)
   const dispatch = useDispatch()
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity)
+
   const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
 
   const toggleCart = () => {
@@ -83,7 +85,7 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-4">
             <span className="cart__icon" onClick={toggleCart}>
               <i className="ri-shopping-basket-line"></i>
-              <span className="cart__badge">5</span>
+              <span className="cart__badge">{totalQuantity}</span>
             </span>
 
             <span className="user">

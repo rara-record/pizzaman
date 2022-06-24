@@ -1,34 +1,49 @@
-import React from 'react'
+import { useDispatch } from 'react-redux'
 import { ListGroupItem } from 'reactstrap'
+import { cartActions } from '../../../store/reducer/cartSlice'
 
-import productImg from '../../../assets/images/product_01.1.jpg'
+const CartItem = ({ item }) => {
+  const { id, title, price, image01, quantity, totalPrice } = item
+  const dispatch = useDispatch()
 
-const CartItem = () => {
+  const incrementItem = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        price,
+      })
+    )
+  }
+
+  const decreaseItem = () => {
+    dispatch(cartActions.removeItem(id))
+  }
+
   return (
     <ListGroupItem className="cart__item border-0">
       <div className="cart__item-info d-flex gap-2">
-        <img src={productImg} alt="product-img" />
+        <img src={image01} alt="product-img" />
 
         <div className="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
           <div>
-            <h6 className="cart__product-title">Burger</h6>
+            <h6 className="cart__product-title">{title}</h6>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
-              2x <span>$24.00</span>
+              {quantity}x <span>${totalPrice}</span>
             </p>
 
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span className="increase__btn">
-                <i class="ri-add-line"></i>
+              <span className="increase__btn" onClick={incrementItem}>
+                <i className="ri-add-line"></i>
               </span>
-              <span className="quantity">1</span>
-              <span className="decrease__btn">
-                <i class="ri-subtract-line"></i>
+              <span className="quantity">{quantity}</span>
+              <span className="decrease__btn" onClick={decreaseItem}>
+                <i className="ri-subtract-line"></i>
               </span>
             </div>
           </div>
 
           <span className="delete__btn">
-            <i class="ri-close-line"></i>
+            <i className="ri-close-line"></i>
           </span>
         </div>
       </div>
