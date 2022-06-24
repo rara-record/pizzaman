@@ -1,9 +1,7 @@
 @charset 'utf-8';
 
-// base
-@import './common/reset';
-
 // 공통
+@import './common/reset';
 @import './common/header';
 @import './common/footer';
 
@@ -12,3 +10,8 @@
 @import './home/hero-section';
 @import './home//category';
 @import './home/product-card';
+@import './home/slider';
+
+// sub
+@import './sub/shopping-cart';
+@import './sub/cart-item';
