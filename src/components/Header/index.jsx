@@ -1,8 +1,11 @@
-import React, { useRef, useEffect } from 'react'
-
 import { Container } from 'reactstrap'
-import logo from '../../assets/images/res-logo.png'
+import { useRef, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+
+import logo from '../../assets/images/res-logo.png'
+
+import { cartUIActions } from '../../store/reducer/cartUISlice'
 
 const nav__links = [
   {
@@ -26,7 +29,12 @@ const nav__links = [
 const Header = () => {
   const menuRef = useRef(null)
   const headerRef = useRef(null)
+  const dispatch = useDispatch()
   const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
+
+  const toggleCart = () => {
+    dispatch(cartUIActions.toggle())
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -39,6 +47,7 @@ const Header = () => {
         headerRef.current.classList.remove('header__shrink')
       }
     })
+
     return () => window.removeEventListener('scroll')
   }, [])
 
@@ -46,10 +55,12 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
-          <div className="logo">
-            <img src={logo} alt="logo" />
-            <h1>Pizzaman</h1>
-          </div>
+          <Link to="/">
+            <div className="logo">
+              <img src={logo} alt="logo" />
+              <h1>Pizzaman</h1>
+            </div>
+          </Link>
 
           {/* ======= menu ======= */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
@@ -70,19 +81,19 @@ const Header = () => {
 
           {/* ======= nav right icons ======= */}
           <div className="nav__right d-flex align-items-center gap-4">
-            <span className="cart__icon">
-              <i class="ri-shopping-basket-line"></i>
-              <span className="cart__badge">2</span>
+            <span className="cart__icon" onClick={toggleCart}>
+              <i className="ri-shopping-basket-line"></i>
+              <span className="cart__badge">5</span>
             </span>
 
             <span className="user">
               <Link to="login">
-                <i class="ri-user-line"></i>
+                <i className="ri-user-line"></i>
               </Link>
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
-              <i class="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>
