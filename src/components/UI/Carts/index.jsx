@@ -8,6 +8,7 @@ import { cartUIActions } from '../../../store/reducer/cartUISlice'
 const Carts = () => {
   const dispatch = useDispatch()
   const cartProducts = useSelector((state) => state.cart.cartItems)
+  const totalAmount = useSelector((state) => state.cart.totalAmount)
 
   const toggleCart = () => {
     dispatch(cartUIActions.toggle())
@@ -34,7 +35,7 @@ const Carts = () => {
 
         <div className="cart__bottom">
           <h6>
-            Subtotal amount: <span>$123</span>
+            Subtotal: <span>{totalAmount}</span>
           </h6>
           <button>
             <Link to="/checkout">CheckOut</Link>
