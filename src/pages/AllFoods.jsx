@@ -1,4 +1,3 @@
-import React from 'react'
 import Helmet from '../components/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 
@@ -8,9 +7,23 @@ import ProductCard from '../components/UI/ProductCard'
 import { useState } from 'react'
 import { Container, Col, Row } from 'reactstrap'
 
+import ReactPaginate from 'react-paginate'
+
 const AllFoods = () => {
   const [searchValue, setSearchValue] = useState('')
+  const [pageNumber, setPageNumber] = useState(0)
   const [productData, setProductData] = useState(products)
+  const [activePaginate, setActivePaginate] = useState('')
+
+  const productPerPage = 8 // 아이템 표시 갯수
+  const visitedPage = pageNumber * productPerPage
+  const displayPage = products.slice(visitedPage, visitedPage + productPerPage)
+
+  const pageCount = Math.ceil(products.length / productPerPage)
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
 
   return (
     <Helmet title="All-Foods">
@@ -45,7 +58,7 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {productData
+            {displayPage
               ?.filter((item) => {
                 if (searchValue === '') return item
                 if (
@@ -58,6 +71,17 @@ const AllFoods = () => {
                   <ProductCard item={item} />
                 </Col>
               ))}
+
+            <div>
+              <ReactPaginate
+                pageCount={pageCount}
+                onPageChange={changePage}
+                previousLabel={'Prev'}
+                nextLabel={'Next'}
+                containerClassName={'paginationBtns'}
+                activeClassName={'paginateActive'}
+              />
+            </div>
           </Row>
         </Container>
       </section>
