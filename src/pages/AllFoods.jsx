@@ -2,12 +2,16 @@ import React from 'react'
 import Helmet from '../components/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 
-import { Container, Col, Row } from 'reactstrap'
-
 import products from '../assets/fake-data/products'
 import ProductCard from '../components/UI/ProductCard'
 
+import { useState } from 'react'
+import { Container, Col, Row } from 'reactstrap'
+
 const AllFoods = () => {
+  const [searchValue, setSearchValue] = useState('')
+  const [productData, setProductData] = useState(products)
+
   return (
     <Helmet title="All-Foods">
       <CommonSection title="All Foods" />
@@ -17,7 +21,12 @@ const AllFoods = () => {
           <Row>
             <Col lg="6" md="6" sm="6" xs="12">
               <div className="search__widget d-flex align-items-center justify-content-between">
-                <input type="text" placeholder="I'm looking for...." />
+                <input
+                  type="text"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  placeholder="I'm looking for...."
+                />
                 <span>
                   <i className="ri-search-line"></i>
                 </span>
@@ -36,11 +45,19 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {products.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-                <ProductCard item={item} />
-              </Col>
-            ))}
+            {productData
+              ?.filter((item) => {
+                if (searchValue === '') return item
+                if (
+                  item.title.toLowerCase().includes(searchValue.toLowerCase())
+                )
+                  return item
+              })
+              .map((item) => (
+                <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
+                  <ProductCard item={item} />
+                </Col>
+              ))}
           </Row>
         </Container>
       </section>
