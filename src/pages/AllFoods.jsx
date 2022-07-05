@@ -12,14 +12,28 @@ import ReactPaginate from 'react-paginate'
 const AllFoods = () => {
   const [searchValue, setSearchValue] = useState('')
   const [pageNumber, setPageNumber] = useState(0)
-  const [productData, setProductData] = useState(products)
-  const [activePaginate, setActivePaginate] = useState('')
+
+  const searchedProduct = products.filter((item) => {
+    if (searchValue === '') return item
+    if (
+      item.title
+        .toLocaleLowerCase() //
+        .includes(searchValue.toLowerCase())
+    ) {
+      return item
+    } else {
+      return console.log('not found')
+    }
+  })
 
   const productPerPage = 8 // 아이템 표시 갯수
   const visitedPage = pageNumber * productPerPage
-  const displayPage = products.slice(visitedPage, visitedPage + productPerPage)
+  const displayPage = searchedProduct.slice(
+    visitedPage,
+    visitedPage + productPerPage
+  )
 
-  const pageCount = Math.ceil(products.length / productPerPage)
+  const pageCount = Math.ceil(searchedProduct.length / productPerPage)
 
   const changePage = ({ selected }) => {
     setPageNumber(selected)
@@ -58,19 +72,11 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {displayPage
-              ?.filter((item) => {
-                if (searchValue === '') return item
-                if (
-                  item.title.toLowerCase().includes(searchValue.toLowerCase())
-                )
-                  return item
-              })
-              .map((item) => (
-                <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-                  <ProductCard item={item} />
-                </Col>
-              ))}
+            {displayPage.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
 
             <div>
               <ReactPaginate
