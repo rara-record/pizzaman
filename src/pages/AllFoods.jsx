@@ -26,7 +26,7 @@ const AllFoods = () => {
     }
   })
 
-  const productPerPage = 8 // 아이템 표시 갯수
+  const productPerPage = 8
   const visitedPage = pageNumber * productPerPage
   const displayPage = searchedProduct.slice(
     visitedPage,
@@ -38,6 +38,8 @@ const AllFoods = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
+
+  console.log(displayPage.length)
 
   return (
     <Helmet title="All-Foods">
@@ -71,6 +73,12 @@ const AllFoods = () => {
                 </select>
               </div>
             </Col>
+
+            {displayPage.length === 0 && (
+              <Col lg="3" md="4" sm="6" xs="6">
+                <div className="not-found">Not Found</div>
+              </Col>
+            )}
 
             {displayPage.map((item) => (
               <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
