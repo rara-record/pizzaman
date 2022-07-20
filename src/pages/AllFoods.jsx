@@ -26,7 +26,7 @@ const AllFoods = () => {
     }
   })
 
-  const productPerPage = 8
+  const productPerPage = 9
   const visitedPage = pageNumber * productPerPage
   const displayPage = searchedProduct.slice(
     visitedPage,
@@ -38,8 +38,6 @@ const AllFoods = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-
-  console.log(displayPage.length)
 
   return (
     <Helmet title="All-Foods">
