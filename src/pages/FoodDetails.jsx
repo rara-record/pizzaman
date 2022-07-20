@@ -1,19 +1,45 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Helmet from '../components/Helmet'
 import { Container, Row, Col } from 'reactstrap'
 import CommonSection from '../components/UI/CommonSection'
+import ProductCard from '../components/UI/ProductCard'
 
 import products from '../assets/fake-data/products'
+import { useDispatch } from 'react-redux'
+import { cartActions } from '../store/reducer/cartSlice'
 
 const FoodDetails = () => {
   const { id } = useParams()
+  const dispatch = useDispatch()
   const [tab, setTab] = useState('desc')
 
   const product = products.find((product) => product.id === id)
+
   const [previewImg, setPreviewImg] = useState(product.image01)
   const { title, price, category, desc, image01 } = product
+
+  const relatedProduct = products.filter((item) => category === item.category)
+
+  const addItem = useCallback(() => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+      })
+    )
+  }, [dispatch, id, image01, price, title])
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+  }
+
+  useEffect(() => {
+    setPreviewImg(product.image01)
+  }, [product])
 
   return (
     <Helmet title="Product-detail">
@@ -83,7 +109,9 @@ const FoodDetails = () => {
                   Category: <span>{category}</span>
                 </p>
 
-                <button className="addTOCart__btn">Add to Cart</button>
+                <button onClick={addItem} className="addTOCart__btn">
+                  Add to Cart
+                </button>
               </div>
             </Col>
 
@@ -109,7 +137,7 @@ const FoodDetails = () => {
                 </div>
               ) : (
                 <div className="tab__form mb-3">
-                  <div className="review">
+                  <div className="review pt-5">
                     <p className="user__name mb-0">Jhon Doe</p>
                     <p className="user__email">jhon123@gmail.com</p>
                     <p className="feedback__text">great product</p>
@@ -133,7 +161,7 @@ const FoodDetails = () => {
                     <p className="feedback__text">great product</p>
                   </div>
 
-                  <form className="form">
+                  <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
                       <input type="text" placeholder="Enter your name" />
                     </div>
@@ -158,6 +186,16 @@ const FoodDetails = () => {
                 </div>
               )}
             </Col>
+
+            <Col lg="12" className="mb-5 mt-4">
+              <h2 className="related__Product-title">You might also like</h2>
+            </Col>
+
+            {relatedProduct.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
