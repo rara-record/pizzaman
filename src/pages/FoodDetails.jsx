@@ -13,10 +13,13 @@ import { cartActions } from '../store/reducer/cartSlice'
 const FoodDetails = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
+
   const [tab, setTab] = useState('desc')
+  const [enteredName, setEnteredName] = useState('')
+  const [enteredEmail, setEnteredEmail] = useState('')
+  const [reviewMsg, setReviewMsg] = useState('')
 
   const product = products.find((product) => product.id === id)
-
   const [previewImg, setPreviewImg] = useState(product.image01)
   const { title, price, category, desc, image01 } = product
 
@@ -35,6 +38,8 @@ const FoodDetails = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
+
+    console.log(enteredName, enteredEmail, reviewMsg)
   }
 
   useEffect(() => {
@@ -163,19 +168,30 @@ const FoodDetails = () => {
 
                   <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        onChange={(e) => setEnteredName(e.target.value)}
+                        required
+                      />
                     </div>
 
                     <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                      <input
+                        type="text"
+                        placeholder="Enter your email"
+                        onChange={(e) => setEnteredEmail(e.target.value)}
+                        required
+                      />
                     </div>
 
                     <div className="form__group">
                       <textarea
                         rows={5}
                         type="text"
-                        placeholder="Enter your name"
+                        placeholder="Write your review"
                         required
+                        onChange={(e) => setReviewMsg(e.target.value)}
                       />
                     </div>
 
