@@ -8,11 +8,18 @@
 
 .search__widget {
   input {
+    width: 100%;
     border: none;
 
     &:focus {
       outline: none;
     }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }
 

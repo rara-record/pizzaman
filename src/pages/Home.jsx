@@ -27,7 +27,6 @@ const featureData = [
     imgUrl: featureImg01,
     desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
-
   {
     title: 'Super Dine In',
     imgUrl: featureImg02,
@@ -260,8 +259,8 @@ const Home = () => {
                 <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                      <i className="ri-checkbox-circle-line"></i> Fresh and tasty
-                      foods
+                      <i className="ri-checkbox-circle-line"></i> Fresh and
+                      tasty foods
                     </p>
                     <p className="choose__us-desc">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -271,7 +270,8 @@ const Home = () => {
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i className="ri-checkbox-circle-line"></i> Quality support
+                      <i className="ri-checkbox-circle-line"></i> Quality
+                      support
                     </p>
                     <p className="choose__us-desc">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
