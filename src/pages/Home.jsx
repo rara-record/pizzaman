@@ -27,7 +27,6 @@ const featureData = [
     imgUrl: featureImg01,
     desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
-
   {
     title: 'Super Dine In',
     imgUrl: featureImg02,
