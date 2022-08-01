@@ -10,7 +10,7 @@ import { cartUIActions } from '../../store/reducer/cartUISlice'
 const nav__links = [
   {
     display: 'Home',
-    path: '/home',
+    path: '/',
   },
   {
     display: 'Foods',
