@@ -1,6 +1,5 @@
 {
   "name": "ecommerce-website-1",
-  "homepage": "https://rara-record.github.io/pizzaman/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,9 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "node-sass -wr --source-map true src/styles/main.scss src/style.css",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "sass": "node-sass -wr --source-map true src/styles/main.scss src/style.css"
   },
   "eslintConfig": {
     "extends": [
