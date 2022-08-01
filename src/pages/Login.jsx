@@ -1,7 +1,8 @@
 import React from 'react'
+import Helmet from '../components/Helmet'
 
 const Login = () => {
-  return <div>Login</div>
+  return <Helmet title="Login">Login Page</Helmet>
 }
 
 export default Login

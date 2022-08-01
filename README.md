@@ -1,4 +1,4 @@
-## Food Ordering App
+## Shopping Cart App
 
 ### Features:
 
@@ -10,8 +10,6 @@
 - 쇼핑 카트 기능
 - 제품 필터링 기능
 - 제품별 페이지
-- Contact 페이지
-- 로그인 및 등록 페이지
 
 ### 기술:
 
