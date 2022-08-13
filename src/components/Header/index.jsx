@@ -89,9 +89,7 @@ const Header = () => {
             </span>
 
             <span className="user">
-              <Link to="login">
-                <i className="ri-user-line"></i>
-              </Link>
+              <i className="ri-user-line"></i>
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>
